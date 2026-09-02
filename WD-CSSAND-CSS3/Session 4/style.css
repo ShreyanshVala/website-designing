@@ -1,0 +1,368 @@
+/* =========================================
+   SESSION 4
+   DISPLAY PROPERTIES & LAYOUT
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, sans-serif;
+
+  background-color: #f5f5f5;
+
+  color: #222;
+}
+
+/* =========================================
+   TASK 1
+   BLOCK, INLINE, INLINE-BLOCK
+   ========================================= */
+
+.display-section {
+  padding: 30px;
+
+  background-color: white;
+}
+
+/* BLOCK */
+
+.home {
+  display: block;
+
+  width: 200px;
+  height: 60px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  background-color: #2874f0;
+
+  color: white;
+
+  text-align: center;
+
+  font-weight: bold;
+}
+
+/*
+   INLINE
+
+   Width and height do not work normally
+   on inline elements.
+*/
+
+.explore {
+  display: inline;
+
+  background-color: #ff9800;
+
+  color: white;
+
+  padding: 10px;
+}
+
+/*
+   INLINE-BLOCK
+
+   Appears inline but allows width
+   and height.
+*/
+
+.profile {
+  display: inline-block;
+
+  width: 150px;
+  height: 60px;
+
+  padding: 20px;
+
+  margin-left: 20px;
+
+  background-color: #4caf50;
+
+  color: white;
+
+  text-align: center;
+
+  font-weight: bold;
+}
+
+/* =========================================
+   TASK 2
+   INSTAGRAM STYLE NAVIGATION
+   ========================================= */
+
+.instagram-section {
+  margin-top: 30px;
+
+  padding: 30px;
+
+  background-color: white;
+}
+
+.instagram-nav {
+  text-align: center;
+
+  border: 1px solid #ddd;
+
+  padding: 10px;
+}
+
+/*
+   inline-block allows the menu items
+   to appear side by side while allowing
+   custom width, height and padding.
+*/
+
+.instagram-nav a {
+  display: inline-block;
+
+  width: 120px;
+  height: 45px;
+
+  padding: 12px;
+
+  margin: 5px;
+
+  text-decoration: none;
+
+  color: #222;
+
+  font-weight: bold;
+
+  border-radius: 8px;
+
+  background-color: #f1f1f1;
+}
+
+.instagram-nav a:hover {
+  background-color: #ddd;
+}
+
+/* =========================================
+   TASK 3
+   FLOAT TWO COLUMN LAYOUT
+   ========================================= */
+
+.shopping-section {
+  margin-top: 30px;
+
+  padding: 30px;
+}
+
+.shop-container {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 20px;
+
+  background-color: white;
+
+  border: 2px solid #ddd;
+}
+
+/*
+   LEFT COLUMN
+
+   Product list uses float: left.
+*/
+
+.product-list {
+  float: left;
+
+  width: 68%;
+
+  padding: 20px;
+}
+
+/*
+   RIGHT COLUMN
+
+   Cart uses float: right.
+*/
+
+.cart-sidebar {
+  float: right;
+
+  width: 28%;
+
+  padding: 20px;
+
+  background-color: #fafafa;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+}
+
+/* Product Cards */
+
+.product {
+  margin-bottom: 20px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  background-color: white;
+}
+
+.product h3 {
+  margin-top: 0;
+}
+
+.product p {
+  line-height: 1.6;
+}
+
+.product strong {
+  font-size: 20px;
+}
+
+/* Cart Button */
+
+.cart-sidebar button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: #ff9f00;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   TASK 4
+   CLEARFIX
+   ========================================= */
+
+/*
+   The parent contains floated children.
+
+   ::after creates an invisible element
+   after the floated content and clear: both
+   makes the parent correctly wrap the floats.
+*/
+
+.clearfix::after {
+  content: "";
+
+  display: table;
+
+  clear: both;
+}
+
+/* =========================================
+   TASK 5
+   COMPARISON
+   ========================================= */
+
+.comparison {
+  max-width: 900px;
+
+  margin: 40px auto;
+
+  padding: 30px;
+
+  background-color: white;
+
+  border: 1px solid #ddd;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   FLEXBOX MODERN EXAMPLE
+   ========================================= */
+
+.flex-example {
+  max-width: 1100px;
+
+  margin: 40px auto;
+
+  padding: 30px;
+
+  background-color: white;
+}
+
+.flex-container {
+  display: flex;
+
+  gap: 30px;
+}
+
+.flex-products {
+  flex: 1;
+
+  padding: 40px;
+
+  background-color: #e3f2fd;
+
+  text-align: center;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+.flex-cart {
+  width: 30%;
+
+  padding: 40px;
+
+  background-color: #fff3e0;
+
+  text-align: center;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+  .product-list,
+  .cart-sidebar {
+    float: none;
+
+    width: 100%;
+  }
+
+  .cart-sidebar {
+    margin-top: 20px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-cart {
+    width: 100%;
+  }
+
+  .instagram-nav a {
+    width: 100%;
+  }
+}

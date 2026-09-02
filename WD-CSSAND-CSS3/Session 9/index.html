@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 9 - Animations & Media Queries</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ==================================================
+         TASK 1 - BOOKMYSHOW MOCK HOMEPAGE
+         ================================================== -->
+
+    <header class="movie-header">
+      <h1>BookMyShow</h1>
+
+      <nav>
+        <a href="#">Movies</a>
+        <a href="#">Events</a>
+        <a href="#">Plays</a>
+        <a href="#">Sports</a>
+      </nav>
+    </header>
+
+    <section class="movie-hero">
+      <h2>Book Your Movie Tickets</h2>
+
+      <p>Watch the latest movies in your favorite cinema.</p>
+
+      <!-- Bounce animation -->
+      <button class="book-btn">Book Now</button>
+    </section>
+
+    <!-- ==================================================
+         TASK 2 - GSAP FLIPKART PRODUCT CARD
+         ================================================== -->
+
+    <section class="product-section">
+      <h2>Featured Product</h2>
+
+      <div class="product-card">
+        <div class="product-image">📱</div>
+
+        <div class="product-info">
+          <h3>Smartphone Pro Max</h3>
+
+          <p class="product-description">
+            Latest smartphone with powerful performance, amazing camera and
+            long-lasting battery.
+          </p>
+
+          <p class="price">₹49,999</p>
+
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         TASK 3 - RESPONSIVE NAVIGATION
+         ================================================== -->
+
+    <section class="responsive-section">
+      <h2>Responsive Navigation</h2>
+
+      <!-- Hamburger placeholder -->
+      <button class="hamburger">☰</button>
+
+      <nav class="responsive-nav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </section>
+
+    <!-- ==================================================
+         TASK 4 - ZOMATO RESTAURANT LISTING
+         ================================================== -->
+
+    <section class="restaurant-section">
+      <h2>Popular Restaurants</h2>
+
+      <div class="restaurant-grid">
+        <div class="restaurant-card">
+          <div class="restaurant-image">🍕</div>
+
+          <h3>Pizza Palace</h3>
+
+          <p>Italian • Pizza • Fast Food</p>
+
+          <span>⭐ 4.5</span>
+        </div>
+
+        <div class="restaurant-card">
+          <div class="restaurant-image">🍔</div>
+
+          <h3>Burger House</h3>
+
+          <p>Burgers • Fast Food • Beverages</p>
+
+          <span>⭐ 4.3</span>
+        </div>
+
+        <div class="restaurant-card">
+          <div class="restaurant-image">🍛</div>
+
+          <h3>Royal Restaurant</h3>
+
+          <p>Indian • Gujarati • North Indian</p>
+
+          <span>⭐ 4.6</span>
+        </div>
+
+        <div class="restaurant-card">
+          <div class="restaurant-image">🍜</div>
+
+          <h3>Asian Kitchen</h3>
+
+          <p>Chinese • Thai • Asian</p>
+
+          <span>⭐ 4.4</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         TASK 5 - PERFORMANCE BEST PRACTICES
+         ================================================== -->
+
+    <section class="performance-section">
+      <h2>Animation & Performance Best Practices</h2>
+
+      <div class="best-practices">
+        <div>
+          <h3>1. Animate Efficiently</h3>
+
+          <p>
+            Prefer transform and opacity animations because they are generally
+            more efficient than changing layout properties.
+          </p>
+        </div>
+
+        <div>
+          <h3>2. Reduce Animations on Mobile</h3>
+
+          <p>
+            Use prefers-reduced-motion so users who prefer less animation get a
+            simpler experience.
+          </p>
+        </div>
+
+        <div>
+          <h3>3. Avoid Excessive Animations</h3>
+
+          <p>
+            Keep animations short and avoid animating too many elements at the
+            same time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         GSAP CDN
+         ================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- ==================================================
+         GSAP ANIMATION
+         ================================================== -->
+
+    <script>
+      /*
+         TASK 2:
+
+         gsap.from() starts the product card from:
+
+         opacity: 0  → invisible
+         y: 60        → 60px below its final position
+
+         Then GSAP automatically animates it
+         to its normal position.
+        */
+
+      gsap.from(".product-card", {
+        opacity: 0,
+        y: 60,
+        duration: 1,
+        ease: "power2.out",
+      });
+    </script>
+  </body>
+</html>

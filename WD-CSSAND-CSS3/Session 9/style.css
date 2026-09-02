@@ -1,0 +1,494 @@
+/* ==================================================
+   SESSION 9
+   ANIMATIONS & MEDIA QUERIES
+   ================================================== */
+
+/* ==================================================
+   GENERAL / MOBILE-FIRST BASE STYLES
+   ================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+section {
+  padding: 50px 5%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ==================================================
+   TASK 1 - BOOKMYSHOW
+   ================================================== */
+
+.movie-header {
+  background-color: #e11d48;
+
+  color: white;
+
+  padding: 18px 5%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  text-align: center;
+}
+
+.movie-header h1 {
+  font-size: 28px;
+}
+
+.movie-header nav {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.movie-header a {
+  color: white;
+
+  text-decoration: none;
+
+  padding: 5px 8px;
+}
+
+.movie-header a:hover {
+  text-decoration: underline;
+}
+
+.movie-hero {
+  text-align: center;
+
+  padding: 70px 5%;
+
+  background: linear-gradient(135deg, #ffe4e6, #fce7f3);
+}
+
+.movie-hero h2 {
+  font-size: 30px;
+
+  margin-bottom: 15px;
+}
+
+.movie-hero p {
+  margin-bottom: 25px;
+
+  color: #555;
+}
+
+/* Book Now Button */
+
+.book-btn {
+  border: none;
+
+  background-color: #e11d48;
+
+  color: white;
+
+  padding: 13px 28px;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+/* ==================================================
+   TASK 1 - BOUNCE ANIMATION
+   Animista-style CSS animation
+   ================================================== */
+
+.book-btn:hover {
+  animation: bounce 1s infinite;
+}
+
+/*
+   Bounce animation inspired by
+   ready-made CSS animation patterns.
+
+   Transform is used instead of changing
+   width/height because transform is more
+   performance-friendly.
+*/
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-12px);
+  }
+
+  60% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==================================================
+   TASK 2 - FLIPKART PRODUCT CARD
+   ================================================== */
+
+.product-section {
+  background-color: white;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 400px;
+
+  margin: auto;
+
+  background-color: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+}
+
+.product-image {
+  font-size: 90px;
+
+  background-color: #f1f5f9;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  margin-bottom: 20px;
+}
+
+.product-info h3 {
+  font-size: 22px;
+
+  margin-bottom: 10px;
+}
+
+.product-description {
+  color: #64748b;
+
+  line-height: 1.6;
+
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #16a34a;
+
+  margin-bottom: 20px;
+}
+
+.buy-btn {
+  border: none;
+
+  background-color: #f59e0b;
+
+  color: white;
+
+  padding: 12px 25px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+/* ==================================================
+   TASK 3 - RESPONSIVE NAVIGATION
+   MOBILE-FIRST
+   ================================================== */
+
+.responsive-section {
+  background-color: #eef2ff;
+}
+
+/* Hamburger visible on mobile */
+
+.hamburger {
+  display: block;
+
+  margin: 0 auto 20px;
+
+  border: none;
+
+  background-color: #312e81;
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 6px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+/* Mobile navigation */
+
+.responsive-nav {
+  display: block;
+
+  text-align: center;
+}
+
+.responsive-nav a {
+  display: block;
+
+  color: #312e81;
+
+  text-decoration: none;
+
+  padding: 12px;
+
+  background-color: white;
+
+  margin: 5px 0;
+
+  border-radius: 6px;
+}
+
+.responsive-nav a:hover {
+  background-color: #c7d2fe;
+}
+
+/* ==================================================
+   TASK 4 - ZOMATO RESTAURANT LISTING
+   MOBILE-FIRST: 320px
+   ================================================== */
+
+.restaurant-section {
+  background-color: #fff7ed;
+}
+
+.restaurant-grid {
+  /* Mobile: one column */
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 20px;
+}
+
+.restaurant-card {
+  background-color: white;
+
+  padding: 18px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-image {
+  height: 150px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: #ffedd5;
+
+  border-radius: 10px;
+
+  font-size: 70px;
+
+  margin-bottom: 15px;
+}
+
+.restaurant-card h3 {
+  font-size: 20px;
+
+  margin-bottom: 7px;
+}
+
+.restaurant-card p {
+  font-size: 14px;
+
+  color: #64748b;
+
+  margin-bottom: 10px;
+}
+
+.restaurant-card span {
+  font-weight: 600;
+
+  color: #ea580c;
+}
+
+/* ==================================================
+   TASK 5 - PERFORMANCE
+   ================================================== */
+
+/*
+   CHATGPT BEST PRACTICES:
+
+   1. Prefer transform and opacity for animations.
+   2. Respect prefers-reduced-motion.
+   3. Avoid excessive animations on mobile.
+
+   IMPLEMENTED SUGGESTION:
+
+   We use prefers-reduced-motion below.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==================================================
+   768px - TABLET
+   ================================================== */
+
+@media (min-width: 768px) {
+  section {
+    padding: 60px 7%;
+  }
+
+  /* Responsive navigation */
+
+  .hamburger {
+    display: none;
+  }
+
+  .responsive-nav {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .responsive-nav a {
+    display: inline-block;
+
+    margin: 0;
+
+    padding: 12px 20px;
+  }
+
+  /* Restaurant grid */
+
+  .restaurant-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movie-header {
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    text-align: left;
+  }
+}
+
+/* ==================================================
+   1024px - LAPTOP
+   ================================================== */
+
+@media (min-width: 1024px) {
+  section {
+    padding: 70px 8%;
+  }
+
+  /* Desktop-style navigation */
+
+  .responsive-nav {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+  }
+
+  /* Restaurant grid */
+
+  .restaurant-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .movie-hero h2 {
+    font-size: 40px;
+  }
+}
+
+/* ==================================================
+   1200px - DESKTOP
+   ================================================== */
+
+@media (min-width: 1200px) {
+  section {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  /* Restaurant grid */
+
+  .restaurant-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-card {
+    max-width: 450px;
+  }
+
+  .movie-hero {
+    padding: 100px 10%;
+  }
+}

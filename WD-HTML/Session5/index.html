@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 5 - Semantic HTML5</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f8;
+        color: #1f2937;
+        line-height: 1.6;
+      }
+
+      h1 {
+        text-align: center;
+        background: #1d4ed8;
+        color: white;
+        margin: 0;
+        padding: 24px 16px;
+      }
+
+      section {
+        max-width: 1100px;
+        margin: 24px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      h2 {
+        color: #111827;
+        border-bottom: 2px solid #dbeafe;
+        padding-bottom: 8px;
+      }
+
+      header {
+        background: #e0f2fe;
+        padding: 16px 20px;
+        border-radius: 10px;
+        margin-bottom: 18px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 10px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #1d4ed8;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        margin-top: 18px;
+      }
+
+      article,
+      aside,
+      .feature-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 18px;
+      }
+
+      article h4,
+      aside h4,
+      .feature-card h5 {
+        margin-top: 0;
+        color: #0f172a;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      footer {
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px solid #dbeafe;
+        color: #475569;
+        text-align: center;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, #eef6ff, #f8fafc);
+      }
+
+      @media (max-width: 700px) {
+        main,
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Session 5: Semantic HTML5 Tags</h1>
+
+    <section>
+      <h2>1. Food Delivery App Homepage</h2>
+      <header>
+        <h3>QuickBite</h3>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Offers</a>
+          <a href="#">Restaurants</a>
+          <a href="#">My Orders</a>
+        </nav>
+      </header>
+
+      <section>
+        <h4>Hero Section</h4>
+        <p>Find your favorite meals delivered to your door in minutes.</p>
+      </section>
+
+      <section>
+        <h4>Popular Cuisines</h4>
+        <p>Explore Indian, Chinese, Italian, and healthy food options.</p>
+      </section>
+
+      <section>
+        <h4>Featured Restaurants</h4>
+        <p>Top-rated restaurants near you with quick delivery and exciting offers.</p>
+      </section>
+
+      <footer>
+        <p>© 2026 QuickBite. All rights reserved.</p>
+      </footer>
+    </section>
+
+    <section>
+      <h2>2. News Article with Sidebar</h2>
+      <header>
+        <h3>Daily News</h3>
+        <nav>
+          <a href="#">World</a>
+          <a href="#">Business</a>
+          <a href="#">Tech</a>
+          <a href="#">Sports</a>
+        </nav>
+      </header>
+
+      <main>
+        <article>
+          <h4>India launches a new green energy initiative</h4>
+          <p>
+            The government announced a major investment in solar and wind power as part of
+            a larger sustainability plan to reduce energy costs and emissions.
+          </p>
+          <p>
+            Officials said the program will support public infrastructure, create jobs, and
+            encourage innovation in clean technology.
+          </p>
+        </article>
+
+        <aside>
+          <h4>Related Links</h4>
+          <ul>
+            <li><a href="#">Climate update</a></li>
+            <li><a href="#">Policy watch</a></li>
+            <li><a href="#">Market reaction</a></li>
+          </ul>
+        </aside>
+      </main>
+
+      <footer>
+        <p>Daily News © 2026</p>
+      </footer>
+    </section>
+
+    <section>
+      <h2>3. Music Streaming Profile Page</h2>
+      <header>
+        <h3>Spotify Profile</h3>
+      </header>
+
+      <main>
+        <section>
+          <h4>Playlists</h4>
+          <p>Chill Mix, Workout Beats, and Late Night Vibes.</p>
+        </section>
+
+        <aside>
+          <h4>Suggested Artists</h4>
+          <p>Arijit Singh, Ed Sheeran, Dua Lipa, and The Weeknd.</p>
+        </aside>
+
+        <article>
+          <h4>Top Song</h4>
+          <p>"Blinding Lights" by The Weeknd</p>
+        </article>
+      </main>
+    </section>
+
+    <section>
+      <h2>4. Difference Between div and Semantic Tags</h2>
+      <p>
+        A layout built only with <strong>div</strong> tags is generic and does not tell the browser
+        or assistive technology what each section represents. Semantic HTML5 tags like
+        <strong>header</strong>, <strong>nav</strong>, <strong>article</strong>, and <strong>aside</strong>
+        provide meaning, making the page easier to understand for screen readers and search engines.
+        This improves accessibility and can help with SEO because crawlers can better identify main
+        content, navigation, and related sections.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Refactored Flipkart-Style Product Listing</h2>
+
+      <header>
+        <h3>Flipkart</h3>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Electronics</a>
+          <a href="#">Fashion</a>
+          <a href="#">Mobiles</a>
+        </nav>
+      </header>
+
+      <main>
+        <section>
+          <h4>Featured Products</h4>
+          <article>
+            <h5>Wireless Headphones</h5>
+            <p>Premium sound with deep bass and 20-hour battery life.</p>
+          </article>
+          <article>
+            <h5>Smartwatch</h5>
+            <p>Fitness tracking, Bluetooth calling, and AMOLED display.</p>
+          </article>
+          <article>
+            <h5>Bluetooth Speaker</h5>
+            <p>Portable audio with immersive sound and water resistance.</p>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2026 Flipkart Clone</p>
+      </footer>
+    </section>
+  </body>
+</html>

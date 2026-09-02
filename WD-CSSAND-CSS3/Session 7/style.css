@@ -1,0 +1,168 @@
+/*
+====================================================
+SESSION 7 - CSS SPECIFICITY & INHERITANCE
+====================================================
+
+TASK 2 - CASCADE EXPLANATION:
+
+External CSS sets the playlist background color to yellow.
+
+But the HTML also contains an internal <style> block
+with the same .playlist-list selector.
+
+The internal CSS appears later in the HTML and therefore
+overrides the external CSS when specificity is equal.
+
+So the playlist background becomes LIGHTBLUE.
+*/
+
+/* ==================================================
+   TASK 1
+   External CSS - Different background colors
+   ================================================== */
+
+/* Profile Card */
+.profile-card {
+  background-color: lightgreen;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/* Playlist List */
+.playlist-list {
+  background-color: yellow;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/* Trending Hashtags Sidebar */
+.trending-sidebar {
+  background-color: orange;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/* ==================================================
+   TASK 4 - INHERITANCE & SPECIFICITY
+   ================================================== */
+
+/*
+   BODY sets the default text color for the entire page.
+   Child elements inherit this color unless they have
+   their own more specific color rule.
+*/
+
+body {
+  color: darkblue;
+  font-family: Arial, sans-serif;
+}
+
+/*
+   The profile-card class has its own color.
+
+   Therefore, text inside the profile card appears
+   PURPLE instead of inheriting darkblue from body.
+
+   Reason:
+   .profile-card has a specific color declaration,
+   so it overrides the inherited body color.
+*/
+
+.profile-card {
+  color: purple;
+}
+
+/* ==================================================
+   TASK 5 - SPECIFICITY FIX
+   ================================================== */
+
+/*
+   Problem:
+
+   Suppose we only had:
+
+   .playlist-list {
+       color: blue;
+   }
+
+   But the <li> elements could have their own color rule,
+   for example:
+
+   .playlist-items li {
+       color: black;
+   }
+
+   The selector ".playlist-items li" is more specific
+   than ".playlist-list".
+
+   Therefore, blue would NOT apply directly to the <li>.
+
+   FIX:
+
+   Use a more specific selector:
+*/
+
+.playlist-list .playlist-items li {
+  color: blue;
+}
+
+/*
+   Specificity comparison:
+
+   .playlist-list
+   = 0-1-0
+
+   .playlist-list .playlist-items li
+   = 0-2-1
+
+   The second selector is more specific, so the playlist
+   items will correctly appear BLUE.
+*/
+
+/* ==================================================
+   GENERAL STYLING
+   ================================================== */
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 25px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* ==================================================
+   TASK 3 - External rule for comparison
+   ================================================== */
+
+/*
+   This rule tries to make the trending sidebar green.
+
+   But the inline style in index.html says:
+
+   style="background-color: pink;"
+
+   Inline CSS has higher priority, so PINK is displayed.
+*/
+
+.trending-sidebar {
+  background-color: green;
+}

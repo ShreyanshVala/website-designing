@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Session 4 - Display & Layout</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================
+         TASK 1
+         BLOCK, INLINE, INLINE-BLOCK
+         ========================================= -->
+
+    <h1>Task 1 - Display Properties</h1>
+
+    <section class="display-section">
+      <!-- Block Element -->
+      <div class="home">Home</div>
+
+      <!-- Inline Element -->
+      <span class="explore"> Explore </span>
+
+      <!-- Inline-Block Element -->
+      <div class="profile">Profile</div>
+    </section>
+
+    <!-- =========================================
+         TASK 2
+         INSTAGRAM STYLE NAVIGATION
+         ========================================= -->
+
+    <section class="instagram-section">
+      <h1>Task 2 - Instagram Navigation</h1>
+
+      <nav class="instagram-nav">
+        <a href="#">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Explore</a>
+        <a href="#">Reels</a>
+        <a href="#">Profile</a>
+      </nav>
+    </section>
+
+    <!-- =========================================
+         TASK 3 + TASK 4
+         FLOAT TWO COLUMN LAYOUT + CLEARFIX
+         ========================================= -->
+
+    <section class="shopping-section">
+      <h1>Task 3 & 4 - Flipkart Style Layout</h1>
+
+      <!--
+            The clearfix class fixes the float collapsing
+            problem in the parent container.
+        -->
+
+      <div class="shop-container clearfix">
+        <!-- LEFT PRODUCT LIST -->
+
+        <div class="product-list">
+          <h2>Products</h2>
+
+          <div class="product">
+            <h3>Smartphone</h3>
+
+            <p>
+              Latest smartphone with powerful processor, excellent camera and
+              long battery life.
+            </p>
+
+            <strong>₹19,999</strong>
+          </div>
+
+          <div class="product">
+            <h3>Laptop</h3>
+
+            <p>
+              High-performance laptop suitable for coding, office work and
+              entertainment.
+            </p>
+
+            <strong>₹49,999</strong>
+          </div>
+
+          <div class="product">
+            <h3>Wireless Headphones</h3>
+
+            <p>
+              Enjoy high-quality sound with comfortable wireless headphones.
+            </p>
+
+            <strong>₹2,999</strong>
+          </div>
+
+          <div class="product">
+            <h3>Smart Watch</h3>
+
+            <p>
+              Track your fitness, notifications and daily activities with a
+              smart watch.
+            </p>
+
+            <strong>₹3,999</strong>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR CART -->
+
+        <aside class="cart-sidebar">
+          <h2>🛒 Cart</h2>
+
+          <p>Smartphone × 1</p>
+          <p>Headphones × 1</p>
+          <p>Smart Watch × 1</p>
+
+          <hr />
+
+          <h3>Total: ₹26,997</h3>
+
+          <button>Checkout</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================================
+         TASK 5
+         FLOAT vs FLEXBOX
+         ========================================= -->
+
+    <section class="comparison">
+      <h1>Task 5 - Float vs Flexbox</h1>
+
+      <p>
+        Floats were originally designed mainly for wrapping text around images,
+        but developers started using them for complete page layouts.
+      </p>
+
+      <p>
+        Float-based layouts require techniques like clearfix to prevent parent
+        containers from collapsing.
+      </p>
+
+      <p>
+        Flexbox was designed specifically for one-dimensional layouts and makes
+        alignment, spacing and responsive columns much easier.
+      </p>
+
+      <p>
+        For example, instead of using float: left and float: right, we can use
+        display: flex on the parent and easily control both columns using gap,
+        justify-content and width.
+      </p>
+    </section>
+
+    <!-- =========================================
+         FLEXBOX EXAMPLE
+         ========================================= -->
+
+    <section class="flex-example">
+      <h2>Modern Flexbox Example</h2>
+
+      <div class="flex-container">
+        <div class="flex-products">Product List</div>
+
+        <div class="flex-cart">Shopping Cart</div>
+      </div>
+    </section>
+  </body>
+</html>

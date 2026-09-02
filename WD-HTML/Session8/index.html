@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Review Blog | Fresh Stories & Honest Ratings</title>
+    <meta
+      name="description"
+      content="Discover honest movie reviews, trending films, and recommended entertainment picks on our movie review blog."
+    />
+    <meta
+      name="keywords"
+      content="movie reviews, film blog, cinema, blockbuster reviews, latest movies, streaming picks"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        color: #1f2937;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: #111827;
+        color: white;
+        padding: 18px 0;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 18px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      main {
+        padding: 30px 0;
+      }
+
+      .hero,
+      .product,
+      .review-card,
+      .food-hero {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+
+      .dish-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .dish-card {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px;
+      }
+
+      .dish-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      h1, h2, h3 {
+        margin-top: 0;
+      }
+
+      .feature-list {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .review-box {
+        border-left: 4px solid #f59e0b;
+        background: #fffbeb;
+        padding: 12px 16px;
+      }
+
+      footer {
+        background: #0f172a;
+        color: white;
+        padding: 20px 0;
+      }
+
+      @media (max-width: 600px) {
+        .topbar {
+          display: block;
+          text-align: center;
+        }
+
+        nav ul {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container topbar">
+        <div class="brand">CineView</div>
+        <nav aria-label="Main Navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#food">Food Picks</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" id="home">
+      <section class="hero">
+        <h1>Top Movie Picks of the Month</h1>
+        <p>
+          Explore trending movie reviews, fresh recommendations, and honest reactions from cinema lovers.
+        </p>
+      </section>
+
+      <section id="reviews" class="product">
+        <h2>Featured Product: New Release Review</h2>
+        <h3>Movie Title: The Midnight Run</h3>
+        <p>
+          A thrilling blend of action, suspense, and emotional storytelling that keeps the audience engaged from start to finish.
+        </p>
+
+        <h3>Features</h3>
+        <ul class="feature-list">
+          <li>Fast-paced storyline</li>
+          <li>Strong character development</li>
+          <li>High-quality visual effects</li>
+        </ul>
+
+        <h3>Reviews</h3>
+        <div class="review-box">
+          <p>“A smart, entertaining action film with memorable moments and excellent pacing.”</p>
+        </div>
+      </section>
+
+      <section id="food" class="food-hero">
+        <h2>Food Delivery Favorites</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"
+              alt="Burger and fries food photo"
+            />
+            <h3>Loaded Burger</h3>
+            <p>A cheesy burger with crispy fries and rich sauces.</p>
+          </article>
+
+          <article class="dish-card">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+              alt="Pasta dish with cheese and vegetables photo"
+            />
+            <h3>Cheesy Pasta</h3>
+            <p>Comforting pasta topped with creamy sauce and fresh vegetables.</p>
+          </article>
+
+          <article class="dish-card">
+            <img
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80"
+              alt="Healthy salad bowl with greens and fruits photo"
+            />
+            <h3>Fresh Salad Bowl</h3>
+            <p>A colorful combo of greens, fruits, and crunchy toppings.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="container">
+        <p>© 2026 CineView. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

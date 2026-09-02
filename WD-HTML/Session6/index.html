@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 6 - Multimedia Integration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 24px;
+        background: #f5f7fb;
+        color: #1f2937;
+      }
+
+      section {
+        max-width: 900px;
+        margin: 0 auto 30px;
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      }
+
+      h1, h2 {
+        color: #111827;
+      }
+
+      audio, video, iframe {
+        display: block;
+        margin-top: 12px;
+        max-width: 100%;
+      }
+
+      .playlist {
+        display: grid;
+        gap: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Session 6: Multimedia Integration</h1>
+
+    <section>
+      <h2>1. Favorite Song Audio</h2>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
+    </section>
+
+    <section>
+      <h2>2. YouTube IPL Highlights</h2>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/5qap5aO4i9A"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section>
+      <h2>3. Autoplay and Loop Video</h2>
+      <video autoplay loop muted playsinline width="560" height="315">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section>
+      <h2>4. Chill Beats Playlist</h2>
+      <div class="playlist">
+        <div>
+          <h3>Track 1</h3>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg" />
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+
+        <div>
+          <h3>Track 2</h3>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg" />
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Video Controls Only</h2>
+      <video controls controlsList="nodownload nofullscreen" width="560" height="315">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </body>
+</html>

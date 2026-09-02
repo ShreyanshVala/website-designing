@@ -1,0 +1,43 @@
+/* ===================================
+   SESSION 1 - CSS SELECTORS
+   =================================== */
+
+/* Element Selector */
+/* Task 1: Heading background color */
+h1 {
+  background-color: orange;
+  color: white;
+  font-size: 32px;
+  padding: 15px;
+}
+
+/* Element Selector */
+/* Task 1: Paragraph font size */
+p {
+  font-size: 20px;
+}
+
+/* Class Selector */
+/* Task 3: Style all menu items */
+.menu-item {
+  font-style: italic;
+  color: green;
+  font-size: 20px;
+  margin: 10px;
+}
+
+/* ID Selector */
+/* Task 3: Highlight special menu item */
+.special-item {
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Grouping Selector */
+/* Task 4: Apply border to heading and menu items */
+h1,
+.menu-item {
+  border: 2px solid black;
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Session 1 - Restaurant Menu</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Internal CSS -->
+    <style>
+      /* Internal CSS gives the paragraph a blue color */
+      .description {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Restaurant Name -->
+    <section>
+      <h1>Zomato Food Hub</h1>
+    </section>
+
+    <!-- Restaurant Description -->
+    <section>
+      <!-- Inline CSS gives this paragraph a red color -->
+      <p class="description" style="color: red">
+        Welcome to Zomato Food Hub! Enjoy delicious food, fresh ingredients, and
+        amazing dishes at affordable prices.
+      </p>
+
+      <!-- 
+        CSS Priority Explanation:
+        The paragraph appears RED because inline CSS has higher
+        priority than internal CSS and external CSS.
+        Priority: Inline > Internal/External
+        -->
+    </section>
+
+    <!-- Menu -->
+    <section>
+      <h2>Our Menu</h2>
+
+      <ul>
+        <li class="menu-item">Margherita Pizza</li>
+        <li class="menu-item">Veg Burger</li>
+        <li class="menu-item">Masala Dosa</li>
+        <li class="menu-item special-item">Paneer Tikka - Special</li>
+        <li class="menu-item">French Fries</li>
+      </ul>
+    </section>
+  </body>
+</html>

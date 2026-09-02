@@ -1,0 +1,348 @@
+/* ==========================================
+   SESSION 8 - STYLED PORTFOLIO PAGE
+   ========================================== */
+
+/* ==========================================
+   GENERAL STYLING
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-color: #f5f7fb;
+}
+
+/* ==========================================
+   TASK 1 - NAVIGATION BAR
+   ========================================== */
+
+.navbar {
+  background-color: #172554;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 8%;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+
+  transition: 0.3s;
+}
+
+/* Hover effect */
+
+.navbar a:hover {
+  background-color: #3b82f6;
+  border-radius: 8px;
+}
+
+/* ==========================================
+   HOME SECTION
+   ========================================== */
+
+.hero {
+  min-height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 50px 8%;
+
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+}
+
+.hero h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+
+  color: #475569;
+  line-height: 1.8;
+}
+
+.hero-btn,
+.contact-btn {
+  display: inline-block;
+
+  text-decoration: none;
+  color: white;
+
+  background-color: #2563eb;
+
+  padding: 12px 25px;
+
+  border-radius: 8px;
+
+  transition: 0.3s;
+}
+
+.hero-btn:hover,
+.contact-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   TASK 2 - ABOUT ME
+   ========================================== */
+
+.about-section {
+  padding: 80px 8%;
+
+  text-align: center;
+
+  background-color: white;
+}
+
+.about-section h2 {
+  font-family: "Poppins", sans-serif;
+
+  color: #7c3aed;
+
+  font-size: 35px;
+
+  margin-bottom: 25px;
+}
+
+.about-section p {
+  max-width: 750px;
+
+  margin: 12px auto;
+
+  color: #475569;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================
+   TASK 3 - PROJECTS FLEXBOX
+   ========================================== */
+
+.projects-section {
+  padding: 80px 8%;
+
+  background-color: #f8fafc;
+
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+/*
+   FLEXBOX
+
+   display: flex;
+   flex-wrap: wrap;
+
+   This allows project cards to move
+   to the next line on smaller screens.
+*/
+
+.projects-container {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 25px;
+}
+
+/* Project Card */
+
+.project-card {
+  background-color: white;
+
+  width: 260px;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+/* Project card hover */
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card h3 {
+  color: #2563eb;
+
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  color: #64748b;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+.project-card span {
+  display: inline-block;
+
+  background-color: #dbeafe;
+
+  color: #1d4ed8;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+}
+
+/* ==========================================
+   TASK 4 - CONTACT SECTION
+   ========================================== */
+
+/*
+   AI GENERATED GRADIENT COLOR SCHEME:
+
+   Deep Purple → Blue → Cyan
+
+   This gives the Contact section
+   a modern and professional appearance.
+*/
+
+.contact-section {
+  padding: 80px 8%;
+
+  text-align: center;
+
+  background: linear-gradient(135deg, #4c1d95, #2563eb, #0891b2);
+
+  color: white;
+}
+
+.contact-section h2 {
+  font-size: 35px;
+
+  margin-bottom: 20px;
+}
+
+.contact-section > p {
+  margin-bottom: 25px;
+
+  line-height: 1.7;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+/* Contact button */
+
+.contact-btn {
+  background-color: white;
+
+  color: #1d4ed8;
+
+  font-weight: 600;
+}
+
+.contact-btn:hover {
+  background-color: #e0f2fe;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+  background-color: #0f172a;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .navbar nav {
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .about-section h2,
+  .projects-section h2,
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}

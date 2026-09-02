@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 7 - CSS Specificity & Inheritance</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Internal CSS -->
+    <style>
+      /* 
+           TASK 2:
+           Internal CSS changes the playlist background.
+           Internal CSS has higher priority than external CSS
+           when specificity is the same and it appears later
+           in the cascade.
+        */
+      .playlist-list {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Specificity & Inheritance Demo</h1>
+
+    <!-- TASK 1 & TASK 4: Profile Card -->
+    <section class="profile-card">
+      <h2>Profile Card</h2>
+
+      <p>Name: Shreyansh Vala</p>
+      <p>Role: Web Developer</p>
+      <p>Skills: HTML, CSS, JavaScript</p>
+    </section>
+
+    <!-- TASK 1, TASK 2 & TASK 5: Playlist -->
+    <section class="playlist-list">
+      <h2>My Playlist</h2>
+
+      <ul class="playlist-items">
+        <li>Perfect - Ed Sheeran</li>
+        <li>Believer - Imagine Dragons</li>
+        <li>Shape of You - Ed Sheeran</li>
+        <li>Blinding Lights - The Weeknd</li>
+        <li>Kesariya - Arijit Singh</li>
+      </ul>
+    </section>
+
+    <!-- TASK 1 & TASK 3: Trending Hashtags -->
+    <section class="trending-sidebar" style="background-color: pink">
+      <!-- 
+            TASK 3:
+            Pink is visible because inline CSS has higher priority
+            than internal and external CSS.
+        -->
+
+      <h2>Trending Hashtags</h2>
+
+      <ul>
+        <li>#WebDevelopment</li>
+        <li>#CSS</li>
+        <li>#JavaScript</li>
+        <li>#ReactJS</li>
+        <li>#DevOps</li>
+      </ul>
+    </section>
+  </body>
+</html>

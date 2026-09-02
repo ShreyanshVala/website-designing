@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 2 - CSS Transitions</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .task {
+        background-color: white;
+        padding: 30px;
+        margin: 30px auto;
+        max-width: 600px;
+        border-radius: 12px;
+      }
+
+      /* =========================
+           TASK 1: Order Button
+           ========================= */
+
+      .order-btn {
+        background-color: orange;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        transition:
+          background-color 0.5s ease,
+          color 0.5s ease;
+      }
+
+      .order-btn:hover {
+        background-color: green;
+        color: yellow;
+      }
+
+      /* =========================
+           TASK 2: Profile Picture
+           ========================= */
+
+      .profile-pic {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+
+        transition:
+          transform 0.5s ease,
+          box-shadow 0.5s ease;
+      }
+
+      .profile-pic:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* =========================
+           TASK 3: Transition Card
+           ========================= */
+
+      .transition-card {
+        padding: 30px;
+        border: 3px solid grey;
+        border-radius: 12px;
+
+        transition: border-color 0.5s ease-in-out;
+      }
+
+      .transition-card:hover {
+        border-color: blue;
+      }
+
+      /* =========================
+           TASK 4: User Experience
+           ========================= */
+
+      .explanation {
+        line-height: 1.6;
+        font-size: 17px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Session 2: CSS Transitions</h1>
+
+    <!-- TASK 1 -->
+    <div class="task">
+      <h2>Task 1: Order Button</h2>
+
+      <button class="order-btn">Order Now</button>
+    </div>
+
+    <!-- TASK 2 -->
+    <div class="task">
+      <h2>Task 2: Profile Picture</h2>
+
+      <img
+        class="profile-pic"
+        src="https://via.placeholder.com/200"
+        alt="Profile Picture"
+      />
+
+      <p>Hover over the image.</p>
+    </div>
+
+    <!-- TASK 3 -->
+    <div class="task">
+      <h2>Task 3: Transition Card</h2>
+
+      <div class="transition-card">
+        <h3>Transition Card</h3>
+        <p>Hover over this card to change the border from grey to blue.</p>
+      </div>
+    </div>
+
+    <!-- TASK 4 -->
+    <div class="task">
+      <h2>Task 4: User Experience</h2>
+
+      <p class="explanation">
+        Smooth transitions make interactive elements such as buttons and images
+        feel more responsive and natural. In apps like Zomato or Myntra,
+        transitions provide visual feedback when users interact with products
+        and buttons, making the interface easier and more pleasant to use. They
+        also help users understand that an action has been recognized by the
+        application.
+      </p>
+    </div>
+  </body>
+</html>

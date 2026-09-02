@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Review Form</title>
+  </head>
+  <body>
+    <h1>Food Review Form</h1>
+    <form action="#" method="post">
+      <label for="name">Your Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+        title="Please enter a valid Gmail address"
+        required
+      /><br /><br />
+
+      <label for="comments">Your Review:</label><br />
+      <textarea id="comments" name="comments" rows="5" cols="40" required></textarea><br /><br />
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </body>
+</html>

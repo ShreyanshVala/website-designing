@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Session 3 - Box Model & Positioning</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================
+         TASK 1: FLIPKART-STYLE PRODUCT CARDS
+         ========================================= -->
+
+    <h1>Flipkart Style Products</h1>
+
+    <section class="products">
+      <div class="product-card">
+        <div class="product-image">📱</div>
+
+        <h2>Smartphone</h2>
+
+        <p>
+          Latest smartphone with powerful processor, great camera and
+          long-lasting battery.
+        </p>
+
+        <h3>₹19,999</h3>
+
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">💻</div>
+
+        <h2>Laptop</h2>
+
+        <p>
+          Lightweight laptop with fast performance, modern design and excellent
+          display.
+        </p>
+
+        <h3>₹49,999</h3>
+
+        <button>Add to Cart</button>
+      </div>
+    </section>
+
+    <!-- =========================================
+         TASK 2: INSTAGRAM STORY BAR
+         ========================================= -->
+
+    <section class="story-section">
+      <h1>Instagram Stories</h1>
+
+      <div class="stories">
+        <div class="story">
+          <div class="profile">👨</div>
+          <span>You</span>
+        </div>
+
+        <div class="story">
+          <div class="profile">👩</div>
+          <span>Priya</span>
+        </div>
+
+        <div class="story">
+          <div class="profile">👨</div>
+          <span>Rahul</span>
+        </div>
+
+        <div class="story">
+          <div class="profile">👩</div>
+          <span>Neha</span>
+        </div>
+
+        <div class="story">
+          <div class="profile">👨</div>
+          <span>Amit</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         TASK 4: STICKY YOUTUBE NAVBAR
+         ========================================= -->
+
+    <nav class="youtube-navbar">
+      <div class="logo">▶ YouTube</div>
+
+      <a href="#">Home</a>
+      <a href="#">Shorts</a>
+      <a href="#">Subscriptions</a>
+      <a href="#">Trending</a>
+    </nav>
+
+    <!-- =========================================
+         VIDEO CONTENT
+         ========================================= -->
+
+    <main class="video-section">
+      <h1>Latest Videos</h1>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="thumbnail">🎮</div>
+          <h3>Gaming Video</h3>
+          <p>1.2M views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">💻</div>
+          <h3>Learn Web Development</h3>
+          <p>850K views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">🎵</div>
+          <h3>Top Music Playlist</h3>
+          <p>2.5M views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">🍕</div>
+          <h3>Best Food Places</h3>
+          <p>650K views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">🏏</div>
+          <h3>Cricket Highlights</h3>
+          <p>3.1M views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">🚗</div>
+          <h3>Car Review</h3>
+          <p>900K views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">✈️</div>
+          <h3>Travel Vlog</h3>
+          <p>1.8M views</p>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail">📚</div>
+          <h3>Study Motivation</h3>
+          <p>500K views</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- =========================================
+         TASK 3: FIXED ORDER BUTTON
+         ========================================= -->
+
+    <button class="order-btn">🛒 Order Now</button>
+
+    <!-- =========================================
+         TASK 5: POSITION EXPLANATION
+         ========================================= -->
+
+    <section class="explanation">
+      <h1>Task 5 - Static vs Absolute Position</h1>
+
+      <h2>My Explanation</h2>
+
+      <p>
+        By default, an HTML element has position: static. A static element
+        follows the normal document layout and does not respond to top, right,
+        bottom or left positioning properties.
+      </p>
+
+      <p>
+        When we change an element to position: absolute, it is removed from the
+        normal document flow. It can then be positioned using top, right, bottom
+        and left properties relative to its nearest positioned parent.
+      </p>
+
+      <p>
+        A real example is a notification badge in WhatsApp. The notification
+        number can be placed at the top-right corner of an icon using position:
+        absolute while the parent icon container uses position: relative.
+      </p>
+    </section>
+  </body>
+</html>

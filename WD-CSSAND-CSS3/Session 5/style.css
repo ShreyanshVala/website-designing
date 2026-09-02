@@ -1,0 +1,409 @@
+/* =========================================
+   SESSION 5
+   BORDERS, SHADOWS & BACKGROUNDS
+   ========================================= */
+
+/* General Styling */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  background-color: #f4f4f4;
+
+  color: #222;
+}
+
+.section {
+  padding: 40px;
+
+  text-align: center;
+}
+
+.section > h1 {
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   TASK 1
+   SPOTIFY ARTIST PROFILE CARD
+   ========================================= */
+
+.artist-card {
+  width: 300px;
+
+  margin: auto;
+
+  padding: 25px;
+
+  background-color: #ffffff;
+
+  /*
+       border-radius makes the card corners rounded.
+    */
+
+  border-radius: 20px;
+
+  border: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.artist-card img {
+  width: 180px;
+
+  height: 180px;
+
+  object-fit: cover;
+
+  /*
+       Rounded artist image
+    */
+
+  border-radius: 50%;
+
+  border: 5px solid #1db954;
+}
+
+.artist-card h2 {
+  margin-bottom: 5px;
+}
+
+.artist-card p {
+  color: #666;
+}
+
+.artist-card button {
+  padding: 10px 25px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background-color: #1db954;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   TASK 2
+   FLIPKART PRODUCT CARD
+   ========================================= */
+
+.product-card {
+  width: 320px;
+
+  margin: auto;
+
+  padding: 25px;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+
+  /*
+       box-shadow makes the card look elevated.
+       
+       horizontal offset: 0
+       vertical offset: 8px
+       blur: 20px
+       spread: 2px
+    */
+
+  box-shadow: 0 8px 20px 2px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  height: 180px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: #f1f1f1;
+
+  border-radius: 10px;
+
+  font-size: 90px;
+}
+
+.product-card h2 {
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  line-height: 1.6;
+
+  color: #555;
+}
+
+.product-card h3 {
+  font-size: 25px;
+}
+
+.product-card button {
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background-color: #2874f0;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   TASK 3
+   MOVIE POSTER CARD
+   ========================================= */
+
+.movie-card {
+  width: 350px;
+
+  height: 450px;
+
+  margin: auto;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  /*
+       Background image
+    */
+
+  background-image:
+    linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800");
+
+  background-size: cover;
+
+  background-position: center;
+
+  border-radius: 15px;
+
+  color: white;
+}
+
+/*
+   text-shadow makes the movie title
+   stand out against the background.
+*/
+
+.movie-card h2 {
+  font-size: 35px;
+
+  text-shadow: 3px 3px 5px black;
+
+  margin-bottom: 5px;
+}
+
+.movie-card p {
+  font-size: 18px;
+
+  text-shadow: 2px 2px 4px black;
+}
+
+/* =========================================
+   TASK 4
+   ZOMATO STYLE RESTAURANT CARD
+   ========================================= */
+
+.restaurant-card {
+  width: 500px;
+
+  height: 300px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  /*
+       Food background image
+    */
+
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1000");
+
+  background-size: cover;
+
+  background-position: center;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+}
+
+/*
+   Semi-transparent overlay
+   improves text readability.
+*/
+
+.restaurant-name {
+  width: 100%;
+
+  padding: 20px;
+
+  background-color: rgba(0, 0, 0, 0.65);
+
+  color: white;
+
+  text-align: left;
+}
+
+.restaurant-name h2 {
+  margin: 0 0 5px;
+}
+
+.restaurant-name p {
+  margin: 0;
+}
+
+/* =========================================
+   TASK 5
+   IPL PLAYER CARD
+   ========================================= */
+
+.ipl-card {
+  width: 500px;
+
+  min-height: 300px;
+
+  margin: auto;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  /*
+       Property 1:
+       border-radius
+    */
+
+  border-radius: 20px;
+
+  /*
+       Property 2:
+       box-shadow
+    */
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  /*
+       Property 3:
+       background-image
+    */
+
+  background-image: linear-gradient(135deg, #283593, #1565c0);
+
+  color: white;
+}
+
+.player-image {
+  width: 150px;
+
+  height: 200px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.15);
+
+  border-radius: 15px;
+
+  font-size: 80px;
+}
+
+.player-info {
+  text-align: left;
+}
+
+.player-info h2 {
+  font-size: 30px;
+
+  /*
+       Property 4:
+       text-shadow
+    */
+
+  text-shadow: 2px 2px 4px black;
+}
+
+.player-info p {
+  margin: 8px 0;
+}
+
+.player-info button {
+  margin-top: 15px;
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background-color: white;
+
+  color: #1565c0;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 25px 15px;
+  }
+
+  .restaurant-card,
+  .ipl-card {
+    width: 100%;
+  }
+
+  .ipl-card {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .player-info {
+    text-align: center;
+  }
+}

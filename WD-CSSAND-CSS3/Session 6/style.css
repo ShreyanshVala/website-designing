@@ -1,0 +1,332 @@
+/* =========================================
+   SESSION 6
+   LISTS, TABLES & FORMS
+   ========================================= */
+
+/* General Styling */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  background-color: #f5f5f5;
+
+  color: #222;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* =========================================
+   TASK 1
+   FAVORITE FOOD LIST
+   ========================================= */
+
+.food-section {
+  background-color: white;
+}
+
+.food-list {
+  /*
+       Remove default bullets.
+       We will use emojis instead.
+    */
+
+  list-style: none;
+
+  max-width: 400px;
+
+  margin: 30px auto;
+
+  padding: 0;
+}
+
+.food-list li {
+  padding: 15px 20px;
+
+  margin-bottom: 10px;
+
+  border-radius: 8px;
+
+  background-color: #f1f1f1;
+
+  font-size: 20px;
+
+  /*
+       Smooth hover transition
+    */
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/*
+   Hover effect
+
+   Color changes when mouse moves
+   over the list item.
+*/
+
+.food-list li:hover {
+  color: #e23744;
+
+  background-color: #ffe5e8;
+
+  transform: translateX(8px);
+
+  cursor: pointer;
+}
+
+/* =========================================
+   TASK 2
+   IPL TABLE
+   ========================================= */
+
+.table-section {
+  background-color: #fafafa;
+}
+
+.table-container {
+  max-width: 900px;
+
+  margin: 30px auto;
+
+  /*
+       Makes table corners rounded.
+    */
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background-color: white;
+}
+
+/* Table Header */
+
+th {
+  padding: 15px;
+
+  background-color: #2874f0;
+
+  color: white;
+
+  text-align: left;
+}
+
+/* Table Cells */
+
+td {
+  padding: 15px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+/*
+   Zebra Striping
+
+   Every even row gets a different
+   background color.
+*/
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/*
+   Row Hover Effect
+*/
+
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #dbeafe;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   TASK 3
+   MUSIC APP SIGN-UP FORM
+   ========================================= */
+
+.form-section {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: #eee;
+
+  min-height: 600px;
+}
+
+.form-card {
+  width: 400px;
+
+  padding: 35px;
+
+  background-color: white;
+
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-card h1 {
+  margin-bottom: 5px;
+}
+
+.form-card > p {
+  text-align: center;
+
+  color: #666;
+
+  margin-bottom: 30px;
+}
+
+/* Labels */
+
+form label {
+  display: block;
+
+  margin-top: 15px;
+
+  margin-bottom: 7px;
+
+  font-weight: bold;
+}
+
+/* Input & Select */
+
+form input,
+form select {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 2px solid #ddd;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  /*
+       Smooth focus transition
+    */
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================
+   TASK 3
+   FOCUS EFFECT
+   ========================================= */
+
+form input:focus,
+form select:focus {
+  border-color: #8e44ad;
+
+  /*
+       Focus box-shadow
+    */
+
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.15);
+}
+
+/* =========================================
+   TASK 4
+   SUBMIT BUTTON HOVER EFFECT
+   ========================================= */
+
+form button {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background-color: #8e44ad;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  /*
+       Required transition for smooth scaling
+    */
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/*
+   Hover:
+
+   1. Background color changes
+   2. Button becomes slightly bigger
+*/
+
+form button:hover {
+  background-color: #6c3483;
+
+  transform: scale(1.05);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 600px) {
+  .form-card {
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 25px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+}

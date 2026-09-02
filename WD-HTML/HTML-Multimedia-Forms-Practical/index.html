@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>HTML Multimedia and Forms Practical</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      header {
+        background-color: orange;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      section {
+        margin: 30px 0;
+      }
+
+      iframe {
+        margin: 10px;
+      }
+
+      form {
+        border: 1px solid gray;
+        padding: 20px;
+        width: 400px;
+      }
+    </style>
+
+    <script>
+      function showWelcome() {
+        alert("Welcome to Swiggy Deals!");
+      }
+
+      window.onload = showWelcome;
+    </script>
+  </head>
+
+  <body>
+    <!-- ================= TASK 4 ================= -->
+
+    <marquee>Biggest Blockbusters Now Showing!</marquee>
+
+    <header>
+      <h1>BookMyShow</h1>
+      <p>Movies, Events & Entertainment</p>
+    </header>
+
+    <!-- ================= TASK 1 ================= -->
+
+    <section>
+      <h2>1. My Favorite Singer</h2>
+
+      <h1 style="font-family: Georgia; font-size: 40px">Arijit Singh</h1>
+
+      <h2 style="font-family: &quot;Courier New&quot;; font-size: 30px">
+        Top Song: Tum Hi Ho
+      </h2>
+
+      <p style="font-family: Verdana; font-size: 18px">
+        Arijit Singh is one of the most popular playback singers in India. He is
+        known for his emotional voice and beautiful romantic songs.
+      </p>
+    </section>
+
+    <!-- ================= TASK 2 ================= -->
+
+    <section>
+      <h2>2. Product Feedback Form</h2>
+
+      <form>
+        <label for="product"> Product Name: </label>
+
+        <input
+          type="text"
+          id="product"
+          name="product"
+          placeholder="Enter product name"
+        />
+
+        <br /><br />
+
+        <label>Rating:</label>
+
+        <br />
+
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label for="star1">⭐</label>
+
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2">⭐⭐</label>
+
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3">⭐⭐⭐</label>
+
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4">⭐⭐⭐⭐</label>
+
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5">⭐⭐⭐⭐⭐</label>
+
+        <br /><br />
+
+        <label for="review"> Review: </label>
+
+        <br />
+
+        <textarea
+          id="review"
+          name="review"
+          rows="5"
+          cols="40"
+          placeholder="Write your review..."
+        ></textarea>
+
+        <br /><br />
+
+        <label for="photo"> Upload Product Photo: </label>
+
+        <br />
+
+        <input type="file" id="photo" name="photo" accept="image/*" />
+
+        <br /><br />
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+
+    <!-- ================= TASK 3 ================= -->
+
+    <section>
+      <h2>3. IPL Video</h2>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="IPL Cricket Moment"
+        allowfullscreen
+      >
+      </iframe>
+
+      <h2>Spotify Music</h2>
+
+      <iframe
+        style="border-radius: 12px"
+        src="https://open.spotify.com/embed/track/SPOTIFY_TRACK_ID"
+        width="560"
+        height="352"
+        frameborder="0"
+        allow="
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          fullscreen;
+          picture-in-picture;
+        "
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <!-- ================= TASK 5 ================= -->
+
+    <section>
+      <h2>5. Swiggy Deals</h2>
+
+      <p>Check out the latest food deals and offers!</p>
+    </section>
+  </body>
+</html>
