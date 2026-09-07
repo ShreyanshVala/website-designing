@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ================================= -->
+    <!-- Task 1: Viewport Meta Tag -->
+    <!-- ================================= -->
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Responsive Design - Session 7</title>
+
+    <style>
+      /* ================================= */
+      /* General CSS - Mobile First */
+      /* ================================= */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #222;
+      }
+
+      /* ================================= */
+      /* Task 1: Food Delivery Landing Page */
+      /* ================================= */
+
+      .food-header {
+        background-color: #e23744;
+        color: white;
+        padding: 15px 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .food-header h2 {
+        margin: 0;
+      }
+
+      .food-header a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .food-hero {
+        min-height: 400px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        padding: 30px 20px;
+
+        background-color: #ffe5e5;
+      }
+
+      .food-hero img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 15px;
+      }
+
+      .food-hero h1 {
+        font-size: 32px;
+        margin: 25px 0 10px;
+      }
+
+      .food-hero p {
+        font-size: 17px;
+      }
+
+      .order-btn {
+        background-color: #e23744;
+        color: white;
+        border: none;
+
+        padding: 12px 25px;
+        border-radius: 25px;
+
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .order-btn:hover {
+        background-color: #c82333;
+      }
+
+      /* ================================= */
+      /* Task 2: Movie Streaming Navbar */
+      /* ================================= */
+
+      .movie-section {
+        padding: 40px 20px;
+      }
+
+      .movie-section h2 {
+        text-align: center;
+      }
+
+      /* Mobile: Hamburger visible */
+      .movie-nav {
+        background-color: #111;
+        padding: 15px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .movie-logo {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .hamburger {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      .movie-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+
+        background-color: #222;
+        padding: 15px;
+      }
+
+      .movie-links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* ================================= */
+      /* Task 3: Product Grid */
+      /* ================================= */
+
+      .products {
+        padding: 40px 20px;
+      }
+
+      .products h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      /* Mobile First:
+           1 column */
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .product-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+        text-align: center;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: contain;
+      }
+
+      .product-card h3 {
+        margin: 10px 0;
+      }
+
+      .price {
+        color: #2874f0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .buy-btn {
+        background-color: #2874f0;
+        color: white;
+
+        border: none;
+        padding: 10px 20px;
+
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* ================================= */
+      /* Task 4: BookMyShow Booking Form */
+      /* ================================= */
+
+      .booking {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .booking h2 {
+        text-align: center;
+      }
+
+      .booking-form {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: bold;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .book-btn {
+        width: 100%;
+        padding: 12px;
+
+        background-color: #dc3545;
+        color: white;
+
+        border: none;
+        border-radius: 5px;
+
+        cursor: pointer;
+      }
+
+      /* ================================= */
+      /* 600px: TABLET */
+      /* ================================= */
+
+      @media (min-width: 600px) {
+        /* Task 2:
+               Horizontal navigation */
+
+        .hamburger {
+          display: none;
+        }
+
+        .movie-nav {
+          justify-content: space-between;
+        }
+
+        .movie-links {
+          display: flex;
+          flex-direction: row;
+
+          background-color: transparent;
+          padding: 0;
+        }
+
+        /* Task 3:
+               Two product columns */
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* Hero adjustment */
+
+        .food-hero h1 {
+          font-size: 42px;
+        }
+      }
+
+      /* ================================= */
+      /* 1024px: DESKTOP */
+      /* ================================= */
+
+      @media (min-width: 1024px) {
+        /* Task 2:
+               Extra spacing on desktop */
+
+        .movie-nav {
+          padding: 20px 60px;
+        }
+
+        .movie-links {
+          gap: 40px;
+        }
+
+        /* Task 3:
+               Four product columns */
+
+        .product-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Landing page */
+
+        .food-hero {
+          min-height: 550px;
+        }
+
+        .food-hero h1 {
+          font-size: 52px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================================= -->
+    <!-- TASK 1 -->
+    <!-- Food Delivery Landing Page -->
+    <!-- ================================= -->
+
+    <header class="food-header">
+      <h2>FoodExpress</h2>
+
+      <a href="#booking"> Login </a>
+    </header>
+
+    <section class="food-hero">
+      <img
+        src="https://placehold.co/600x300?text=Delicious+Food"
+        alt="Delicious food"
+      />
+
+      <h1>Delicious Food Delivered Fast</h1>
+
+      <p>Order your favorite food from the best restaurants near you.</p>
+
+      <button class="order-btn" aria-label="Order food now">Order Now</button>
+    </section>
+
+    <!-- ================================= -->
+    <!-- TASK 2 -->
+    <!-- Movie Streaming Navbar -->
+    <!-- ================================= -->
+
+    <section class="movie-section">
+      <h2>Task 2: Movie Streaming Navigation</h2>
+
+      <nav
+        class="movie-nav"
+        role="navigation"
+        aria-label="Movie streaming navigation"
+      >
+        <div class="movie-logo">🎬 MovieStream</div>
+
+        <!-- Hamburger -->
+        <button
+          class="hamburger"
+          aria-label="Open movie navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="movie-links">
+          <a href="#"> Home </a>
+
+          <a href="#"> Movies </a>
+
+          <a href="#"> TV Shows </a>
+
+          <a href="#"> My List </a>
+        </div>
+      </nav>
+    </section>
+
+    <!-- ================================= -->
+    <!-- TASK 3 -->
+    <!-- Flipkart Product Grid -->
+    <!-- ================================= -->
+
+    <section class="products">
+      <h2>Task 3: Flipkart Style Products</h2>
+
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <article class="product-card">
+          <img
+            src="https://placehold.co/300x300?text=Smartphone"
+            alt="Smartphone product"
+          />
+
+          <h3>Smartphone</h3>
+
+          <p class="price">₹19,999</p>
+
+          <button class="buy-btn">Buy Now</button>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card">
+          <img
+            src="https://placehold.co/300x300?text=Laptop"
+            alt="Laptop product"
+          />
+
+          <h3>Laptop</h3>
+
+          <p class="price">₹49,999</p>
+
+          <button class="buy-btn">Buy Now</button>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card">
+          <img
+            src="https://placehold.co/300x300?text=Headphones"
+            alt="Headphones product"
+          />
+
+          <h3>Headphones</h3>
+
+          <p class="price">₹2,499</p>
+
+          <button class="buy-btn">Buy Now</button>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card">
+          <img
+            src="https://placehold.co/300x300?text=Smartwatch"
+            alt="Smartwatch product"
+          />
+
+          <h3>Smartwatch</h3>
+
+          <p class="price">₹3,999</p>
+
+          <button class="buy-btn">Buy Now</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================= -->
+    <!-- TASK 4 -->
+    <!-- BookMyShow Accessible Form -->
+    <!-- ================================= -->
+
+    <section class="booking" id="booking">
+      <h2>Task 4: BookMyShow Ticket Booking</h2>
+
+      <form
+        class="booking-form"
+        role="form"
+        aria-label="Movie ticket booking form"
+      >
+        <!-- Movie Name -->
+        <div class="form-group">
+          <label for="movie"> Movie Name </label>
+
+          <input
+            type="text"
+            id="movie"
+            name="movie"
+            placeholder="Enter movie name"
+            aria-label="Movie name"
+            required
+          />
+        </div>
+
+        <!-- Number of Tickets -->
+        <div class="form-group">
+          <label for="tickets"> Number of Tickets </label>
+
+          <input
+            type="number"
+            id="tickets"
+            name="tickets"
+            min="1"
+            max="10"
+            placeholder="Enter number of tickets"
+            aria-label="Number of tickets"
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email"> Email Address </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email address"
+            aria-label="Email address"
+            required
+          />
+        </div>
+
+        <!-- Accessible Button -->
+        <button type="submit" class="book-btn" aria-label="Book movie tickets">
+          Book Tickets
+        </button>
+      </form>
+    </section>
+
+    <!-- ================================= -->
+    <!-- Hamburger Menu JavaScript -->
+    <!-- ================================= -->
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const movieLinks = document.querySelector(".movie-links");
+
+      hamburger.addEventListener("click", function () {
+        if (movieLinks.style.display === "flex") {
+          movieLinks.style.display = "none";
+
+          hamburger.setAttribute("aria-expanded", "false");
+        } else {
+          movieLinks.style.display = "flex";
+
+          hamburger.setAttribute("aria-expanded", "true");
+        }
+      });
+    </script>
+  </body>
+</html>

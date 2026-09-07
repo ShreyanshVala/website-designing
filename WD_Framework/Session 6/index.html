@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tailwind CSS - Session 6</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <!-- ================================= -->
+  <!-- Task 1: Sky-200 Background -->
+  <!-- ================================= -->
+
+  <body class="bg-sky-200 min-h-screen">
+    <!-- ================================= -->
+    <!-- Task 2: Instagram Profile Card -->
+    <!-- ================================= -->
+
+    <section class="py-10">
+      <h1 class="text-3xl font-bold text-center mb-8">
+        Task 2: Instagram Profile
+      </h1>
+
+      <div
+        class="max-w-sm mx-auto bg-white rounded-2xl shadow-lg p-6 text-center"
+      >
+        <!-- Profile Image -->
+        <img
+          src="https://i.pravatar.cc/300?img=12"
+          alt="Profile Picture"
+          class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-pink-500"
+        />
+
+        <!-- Username -->
+        <h2 class="text-2xl font-bold text-gray-800 mt-4">@music_lover</h2>
+
+        <p class="text-gray-500 mt-2">🎵 Music Lover | 🎧 Playlist Creator</p>
+
+        <!-- Follow Button -->
+        <button
+          class="mt-5 bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-2 rounded-full"
+        >
+          Follow
+        </button>
+      </div>
+    </section>
+
+    <!-- ================================= -->
+    <!-- Task 3: Spotify Navigation -->
+    <!-- ================================= -->
+
+    <section class="py-10">
+      <h1 class="text-3xl font-bold text-center mb-8">
+        Task 3: Spotify Navigation
+      </h1>
+
+      <nav class="bg-gray-900 py-5">
+        <div class="flex justify-center items-center space-x-8">
+          <a href="#" class="text-white hover:text-green-400 font-semibold">
+            Home
+          </a>
+
+          <a href="#" class="text-white hover:text-green-400 font-semibold">
+            Music
+          </a>
+
+          <a href="#" class="text-white hover:text-green-400 font-semibold">
+            Playlists
+          </a>
+
+          <a href="#" class="text-white hover:text-green-400 font-semibold">
+            Artists
+          </a>
+        </div>
+      </nav>
+    </section>
+
+    <!-- ================================= -->
+    <!-- Task 4: Zomato Featured Restaurant -->
+    <!-- ================================= -->
+
+    <section class="py-10">
+      <h1 class="text-3xl font-bold text-center mb-8">
+        Task 4: Featured Restaurant
+      </h1>
+
+      <div
+        class="min-h-[450px] flex justify-center items-center text-center px-6 bg-gradient-to-r from-red-500 to-orange-400"
+      >
+        <div class="text-white max-w-2xl">
+          <!-- Main Heading -->
+          <h2 class="text-4xl md:text-6xl font-bold mb-5">
+            Discover Amazing Food
+          </h2>
+
+          <!-- Subheading -->
+          <p class="text-lg md:text-xl mb-8">
+            Explore the best restaurants and delicious meals near you.
+          </p>
+
+          <!-- CTA Button -->
+          <button
+            class="bg-white text-red-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100"
+          >
+            Explore Restaurants
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================= -->
+    <!-- Footer -->
+    <!-- ================================= -->
+
+    <footer class="bg-gray-900 text-white text-center py-5 mt-10">
+      <p>© 2026 Tailwind CSS Session 6</p>
+    </footer>
+  </body>
+</html>
