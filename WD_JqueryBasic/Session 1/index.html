@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 1 - jQuery Introduction</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fafafa;
+        margin: 0;
+        padding: 30px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      section {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        padding: 10px 18px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #hiddenMessage {
+        display: none;
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #d4edda;
+        color: #155724;
+        border-radius: 5px;
+      }
+
+      .instagram-post {
+        max-width: 400px;
+        margin: auto;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .instagram-post img {
+        width: 100%;
+        display: block;
+      }
+
+      .caption {
+        padding: 15px;
+        font-size: 16px;
+      }
+
+      .menu-item {
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery Introduction - Session 1</h1>
+
+    <!-- Task 2 -->
+    <section>
+      <h2>Task 2: Show Hidden Message</h2>
+
+      <button id="showBtn">Show Message</button>
+
+      <div id="hiddenMessage">
+        🎉 Hello! This message was hidden using jQuery.
+      </div>
+    </section>
+
+    <!-- Task 3 -->
+    <section>
+      <h2>Task 3: Instagram Style Post</h2>
+
+      <div class="instagram-post">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+          alt="Instagram Post"
+        />
+
+        <div class="caption">
+          <strong>@nature_lovers</strong>
+          <br />
+          Enjoying the beautiful view of nature 🌄❤️
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 15px">
+        <button id="hideCaption">Hide Caption</button>
+        <button id="showCaption">Show Caption</button>
+      </div>
+    </section>
+
+    <!-- Task 4 -->
+    <section>
+      <h2>Task 4: Menu Items</h2>
+
+      <div class="menu-item">Home</div>
+      <div class="menu-item">About</div>
+      <div class="menu-item">Services</div>
+      <div class="menu-item">Products</div>
+      <div class="menu-item">Contact</div>
+    </section>
+
+    <!-- jQuery Code -->
+    <script>
+      // Run jQuery after page is completely loaded
+      $(document).ready(function () {
+        // Task 2:
+        // Select #showBtn and show hidden message
+        $("#showBtn").click(function () {
+          $("#hiddenMessage").show();
+        });
+
+        // Task 3:
+        // Hide Instagram caption
+        $("#hideCaption").click(function () {
+          $(".caption").hide();
+        });
+
+        // Show Instagram caption
+        $("#showCaption").click(function () {
+          $(".caption").show();
+        });
+
+        // Task 4:
+        // Select all elements with class menu-item
+        // and change background color
+        $(".menu-item").css("background-color", "#f5f5f5");
+      });
+    </script>
+  </body>
+</html>

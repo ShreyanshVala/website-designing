@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Samsung Galaxy S24",
+        "price": 74999
+    },
+    {
+        "name": "Apple iPhone 15",
+        "price": 69999
+    },
+    {
+        "name": "boAt Rockerz 450 Headphones",
+        "price": 1499
+    },
+    {
+        "name": "Sony Wireless Bluetooth Headphones",
+        "price": 5999
+    },
+    {
+        "name": "HP Laptop 15",
+        "price": 54999
+    },
+    {
+        "name": "Dell Inspiron 15 Laptop",
+        "price": 62999
+    },
+    {
+        "name": "Apple AirPods Pro",
+        "price": 24999
+    },
+    {
+        "name": "Logitech Wireless Mouse",
+        "price": 899
+    },
+    {
+        "name": "Samsung 55 Inch Smart TV",
+        "price": 45999
+    },
+    {
+        "name": "Nike Running Shoes",
+        "price": 3999
+    }
+]

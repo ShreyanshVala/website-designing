@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 3 - jQuery DOM & Events</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 30px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      section {
+        max-width: 700px;
+        margin: 25px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      /* Task 1 */
+      #status {
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+
+      /* Task 2 */
+      #searchBox {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      #restaurantList {
+        list-style: none;
+        padding: 0;
+      }
+
+      .restaurant {
+        padding: 12px;
+        margin: 8px 0;
+        background-color: #fff3f0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      /* Task 3 */
+      .product-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .product-name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .price {
+        font-size: 20px;
+        color: green;
+        margin: 10px 0;
+      }
+
+      #productDetails {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #f0f8ff;
+        border-radius: 5px;
+        display: none;
+      }
+
+      /* Task 4 */
+      #genre {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      #songList {
+        padding: 15px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+      }
+
+      #songList li {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery DOM Manipulation & Events</h1>
+
+    <!-- =================================
+         TASK 1: Online Status
+    ================================== -->
+
+    <section>
+      <h2>Task 1: Online Status</h2>
+
+      <div id="status">You are currently offline.</div>
+
+      <button id="onlineBtn">Go Online</button>
+    </section>
+
+    <!-- =================================
+         TASK 2: Restaurant Search Filter
+    ================================== -->
+
+    <section>
+      <h2>Task 2: Restaurant Search</h2>
+
+      <input type="text" id="searchBox" placeholder="Search restaurant..." />
+
+      <ul id="restaurantList">
+        <li class="restaurant">Domino's Pizza</li>
+
+        <li class="restaurant">McDonald's</li>
+
+        <li class="restaurant">Burger King</li>
+
+        <li class="restaurant">Subway</li>
+
+        <li class="restaurant">Pizza Hut</li>
+
+        <li class="restaurant">Barbeque Nation</li>
+
+        <li class="restaurant">Haldiram's</li>
+
+        <li class="restaurant">The Belgian Waffle</li>
+      </ul>
+    </section>
+
+    <!-- =================================
+         TASK 3: Product Card
+    ================================== -->
+
+    <section>
+      <h2>Task 3: Product Details</h2>
+
+      <div class="product-card">
+        <div class="product-name">Wireless Bluetooth Headphones</div>
+
+        <div class="price">₹1,499</div>
+
+        <p>Premium wireless headphones with comfortable design.</p>
+
+        <button id="detailsBtn">Show Details</button>
+
+        <div id="productDetails">
+          <strong>Product Description:</strong>
+          <p>
+            These wireless headphones provide high-quality sound, powerful bass,
+            long battery life and Bluetooth 5.0 connectivity. Perfect for music
+            and daily use.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================
+         TASK 4: Spotify Playlist Editor
+    ================================== -->
+
+    <section>
+      <h2>Task 4: Playlist Editor</h2>
+
+      <label for="genre"> Select Music Genre: </label>
+
+      <select id="genre">
+        <option value="">-- Select Genre --</option>
+
+        <option value="pop">Pop</option>
+
+        <option value="rock">Rock</option>
+
+        <option value="jazz">Jazz</option>
+      </select>
+
+      <div id="songList">
+        <p>Select a genre to see songs.</p>
+      </div>
+    </section>
+
+    <!-- =================================
+         jQuery Code
+    ================================== -->
+
+    <script>
+      $(document).ready(function () {
+        // =================================
+        // TASK 1: Click Event
+        // =================================
+
+        $("#onlineBtn").click(function () {
+          $("#status").text("You are now online!").css({
+            "background-color": "green",
+            color: "white",
+          });
+        });
+
+        // =================================
+        // TASK 2: Restaurant Search
+        // =================================
+
+        $("#searchBox").keyup(function () {
+          // Get typed text
+          let searchText = $(this).val().toLowerCase();
+
+          $(".restaurant").each(function () {
+            // Get restaurant name
+            let restaurantName = $(this).text().toLowerCase();
+
+            // Check whether name includes search text
+            if (restaurantName.includes(searchText)) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        });
+
+        // =================================
+        // TASK 3: Product Details
+        // =================================
+
+        $("#detailsBtn").click(function () {
+          $("#productDetails").html(`
+                    <strong>Product Description:</strong>
+                    <p>
+                        These wireless headphones provide high-quality
+                        sound, powerful bass, long battery life and
+                        Bluetooth 5.0 connectivity.
+                    </p>
+                `);
+
+          $("#productDetails").slideToggle(400);
+        });
+
+        // =================================
+        // TASK 4: Genre Change Event
+        // =================================
+
+        $("#genre").change(function () {
+          let selectedGenre = $(this).val();
+
+          if (selectedGenre === "pop") {
+            $("#songList").html(`
+                        <h3>🎵 Pop Songs</h3>
+                        <ol>
+                            <li>Shape of You - Ed Sheeran</li>
+                            <li>Blinding Lights - The Weeknd</li>
+                            <li>As It Was - Harry Styles</li>
+                        </ol>
+                    `);
+          } else if (selectedGenre === "rock") {
+            $("#songList").html(`
+                        <h3>🎸 Rock Songs</h3>
+                        <ol>
+                            <li>Believer - Imagine Dragons</li>
+                            <li>In the End - Linkin Park</li>
+                            <li>Sweet Child O' Mine - Guns N' Roses</li>
+                        </ol>
+                    `);
+          } else if (selectedGenre === "jazz") {
+            $("#songList").html(`
+                        <h3>🎷 Jazz Songs</h3>
+                        <ol>
+                            <li>Take Five - Dave Brubeck</li>
+                            <li>Feeling Good - Nina Simone</li>
+                            <li>My Funny Valentine - Chet Baker</li>
+                        </ol>
+                    `);
+          } else {
+            $("#songList").html(`
+                        <p>Select a genre to see songs.</p>
+                    `);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
