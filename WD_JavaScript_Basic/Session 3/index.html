@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 3 - Conditional Statements</title>
+  </head>
+
+  <body>
+    <h1>Session 3 - Conditional Statements</h1>
+
+    <script>
+      // ==========================================
+      // Task 1
+      // Favorite Food
+      // ==========================================
+
+      let favoriteFood = prompt("What is your favorite food?");
+
+      if (favoriteFood.toLowerCase() === "pizza") {
+        alert("Great choice!");
+      } else {
+        alert("Try pizza next time!");
+      }
+
+      // ==========================================
+      // Task 2
+      // Good Morning / Afternoon / Evening
+      // ==========================================
+
+      function showGreeting() {
+        let currentHour = new Date().getHours();
+
+        if (currentHour >= 5 && currentHour <= 11) {
+          alert("Good Morning");
+        } else if (currentHour >= 12 && currentHour <= 17) {
+          alert("Good Afternoon");
+        } else if (currentHour >= 18 && currentHour <= 23) {
+          alert("Good Evening");
+        } else {
+          alert("Good Night");
+        }
+      }
+
+      showGreeting();
+
+      // ==========================================
+      // Task 3
+      // Age Check using Nested If-Else
+      // ==========================================
+
+      let age = Number(prompt("Enter your age:"));
+
+      if (age >= 13) {
+        alert("You can create an Instagram account");
+      } else {
+        if (age >= 7 && age <= 12) {
+          alert("You can use YouTube Kids");
+        } else {
+          alert("Ask your parents for help");
+        }
+      }
+
+      // ==========================================
+      // Task 4
+      // Day Offer using Switch Case
+      // ==========================================
+
+      function getDayOffer() {
+        let today = new Date().getDay();
+
+        switch (today) {
+          case 0:
+            alert("Sunday Special");
+            break;
+
+          case 1:
+            alert("Monday Madness");
+            break;
+
+          case 2:
+            alert("Tasty Tuesday");
+            break;
+
+          case 3:
+            alert("Wednesday Wow");
+            break;
+
+          case 4:
+            alert("Thursday Treat");
+            break;
+
+          case 5:
+            alert("Friday Fiesta");
+            break;
+
+          case 6:
+            alert("Saturday Special");
+            break;
+
+          default:
+            alert("No Offer Today");
+        }
+      }
+
+      getDayOffer();
+    </script>
+  </body>
+</html>

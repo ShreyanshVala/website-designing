@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 9 - Form Validation</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+      }
+
+      form {
+        width: 350px;
+        padding: 25px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      .success {
+        color: green;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Sign Up Form</h1>
+
+    <form id="myLoginForm">
+      <!-- Email -->
+      <label for="email"> Email </label>
+
+      <input type="text" id="email" placeholder="Enter your email" />
+
+      <div id="emailError" class="error"></div>
+
+      <!-- Password -->
+      <label for="password"> Password </label>
+
+      <input type="password" id="password" placeholder="Enter your password" />
+
+      <div id="passwordError" class="error"></div>
+
+      <!-- Submit -->
+      <button type="submit">Sign Up</button>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="success"></div>
+    </form>
+
+    <script>
+      // ==========================================
+      // Task 1 + Task 4
+      // Form Validation
+      // ==========================================
+
+      const form = document.getElementById("myLoginForm");
+
+      form.addEventListener("submit", function (event) {
+        // Prevent normal form submission
+        event.preventDefault();
+
+        validateLoginForm();
+      });
+
+      function validateLoginForm() {
+        let email = document.getElementById("email").value.trim();
+
+        let password = document.getElementById("password").value.trim();
+
+        let emailError = document.getElementById("emailError");
+
+        let passwordError = document.getElementById("passwordError");
+
+        let successMessage = document.getElementById("successMessage");
+
+        // Clear old messages
+        emailError.innerHTML = "";
+        passwordError.innerHTML = "";
+        successMessage.innerHTML = "";
+
+        let isValid = true;
+
+        // ==========================================
+        // Check Empty Fields
+        // ==========================================
+
+        if (email === "") {
+          emailError.innerHTML = "Email is required.";
+
+          isValid = false;
+        }
+
+        if (password === "") {
+          passwordError.innerHTML = "Password is required.";
+
+          isValid = false;
+        }
+
+        // Stop here if fields are empty
+        if (!isValid) {
+          return;
+        }
+
+        // ==========================================
+        // Task 2
+        // Email Regex Validation
+        // ==========================================
+
+        if (!validateEmailFormat(email)) {
+          isValid = false;
+        }
+
+        // ==========================================
+        // Task 3
+        // Password Regex Validation
+        // ==========================================
+
+        let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+        if (!passwordPattern.test(password)) {
+          passwordError.innerHTML =
+            "Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one number.";
+
+          isValid = false;
+        }
+
+        // ==========================================
+        // Task 4
+        // Success Message
+        // ==========================================
+
+        if (isValid) {
+          successMessage.innerHTML =
+            "Sign Up successful! Your account has been created.";
+        }
+      }
+
+      // ==========================================
+      // Task 2
+      // Email Validation Function
+      // ==========================================
+
+      function validateEmailFormat(email) {
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailError").innerHTML =
+            "Please enter a valid email address.";
+
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

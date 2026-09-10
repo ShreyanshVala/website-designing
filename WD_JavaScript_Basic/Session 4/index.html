@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 4 - Loops & Iteration</title>
+  </head>
+
+  <body>
+    <h1>Session 4 - Loops & Iteration</h1>
+
+    <!-- Task 2 Output -->
+    <h2>Usernames</h2>
+    <ul id="usernameList"></ul>
+
+    <!-- Task 5 Output -->
+    <h2>Products</h2>
+    <ul id="productList"></ul>
+
+    <script>
+      // ==========================================
+      // Task 1
+      // For Loop - Playlist
+      // ==========================================
+
+      let playlist = [
+        "Kesariya",
+        "Apna Bana Le",
+        "Chaleya",
+        "Tum Se Hi",
+        "Heeriye",
+      ];
+
+      console.log("----- Playlist -----");
+
+      for (let i = 0; i < playlist.length; i++) {
+        console.log(playlist[i]);
+      }
+
+      // ==========================================
+      // Task 2
+      // While Loop - Usernames
+      // ==========================================
+
+      let usernames = [
+        "virat_kohli",
+        "msdhoni",
+        "hardik_pandya",
+        "rohit_sharma",
+        "shubman_gill",
+      ];
+
+      let i = 0;
+
+      let usernameList = document.getElementById("usernameList");
+
+      while (i < usernames.length) {
+        let li = document.createElement("li");
+
+        li.textContent = usernames[i];
+
+        usernameList.appendChild(li);
+
+        i++;
+      }
+
+      // ==========================================
+      // Task 3
+      // Do-While Loop - Shopping Items
+      // ==========================================
+
+      let shoppingItems = [];
+
+      let itemCount = 0;
+
+      do {
+        let item = prompt("Enter shopping item " + (itemCount + 1) + " of 5:");
+
+        shoppingItems.push(item);
+
+        itemCount++;
+      } while (itemCount < 5);
+
+      console.log("----- Shopping Items -----");
+
+      let position = 0;
+
+      do {
+        console.log(position + 1 + ". " + shoppingItems[position]);
+
+        position++;
+      } while (position < shoppingItems.length);
+
+      // ==========================================
+      // Task 4
+      // For-Of + Continue
+      // ==========================================
+
+      let cricketScores = [45, 0, 78, 102, 0, 34];
+
+      console.log("----- Non-Zero Cricket Scores -----");
+
+      for (let score of cricketScores) {
+        if (score === 0) {
+          continue;
+        }
+
+        console.log(score);
+      }
+
+      // ==========================================
+      // Task 5
+      // For Loop + Break
+      // ==========================================
+
+      let products = ["Shoes", "T-shirt", "Watch", "Bag", "Sunglasses"];
+
+      let productList = document.getElementById("productList");
+
+      for (let j = 0; j < products.length; j++) {
+        if (products[j] === "Watch") {
+          break;
+        }
+
+        let li = document.createElement("li");
+
+        li.textContent = products[j];
+
+        productList.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

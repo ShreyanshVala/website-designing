@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 5 - Functions & Scope</title>
+  </head>
+
+  <body>
+    <h1>Session 5 - Functions & Scope</h1>
+
+    <script>
+      // ==========================================
+      // Task 1
+      // Function Declaration + Parameters + Return
+      // ==========================================
+
+      function calculateFinalPrice(itemPrice, deliveryCharge) {
+        let total = itemPrice + deliveryCharge;
+
+        return total;
+      }
+
+      let finalPrice = calculateFinalPrice(500, 50);
+
+      alert("Final Price: ₹" + finalPrice);
+
+      // ==========================================
+      // Task 2
+      // Arrow Function
+      // ==========================================
+
+      const getGreeting = (name) => {
+        return "Hello, " + name + "!";
+      };
+
+      let greeting = getGreeting("Shreyansh");
+
+      console.log(greeting);
+
+      // ==========================================
+      // Task 3
+      // Default Parameter
+      // ==========================================
+
+      function applyCoupon(cartTotal, couponValue = 0) {
+        return cartTotal - couponValue;
+      }
+
+      // Without couponValue
+      let priceWithoutCoupon = applyCoupon(1000);
+
+      // With couponValue
+      let priceWithCoupon = applyCoupon(1000, 200);
+
+      console.log("Without Coupon: ₹" + priceWithoutCoupon);
+
+      console.log("With Coupon: ₹" + priceWithCoupon);
+
+      // ==========================================
+      // Task 4
+      // Modular Functions
+      // ==========================================
+
+      // Function 1: Calculate Subtotal
+      function calculateSubtotal(price, quantity) {
+        return price * quantity;
+      }
+
+      // Function 2: Calculate Discount
+      function calculateDiscount(subtotal, discountPercentage) {
+        return (subtotal * discountPercentage) / 100;
+      }
+
+      // Function 3: Calculate Final Order Total
+      function calculateOrderTotal(price, quantity, discountPercentage) {
+        let subtotal = calculateSubtotal(price, quantity);
+
+        let discount = calculateDiscount(subtotal, discountPercentage);
+
+        let finalTotal = subtotal - discount;
+
+        return finalTotal;
+      }
+
+      // Test Task 4
+      let orderTotal = calculateOrderTotal(1000, 2, 10);
+
+      console.log("Order Total: ₹" + orderTotal);
+    </script>
+  </body>
+</html>

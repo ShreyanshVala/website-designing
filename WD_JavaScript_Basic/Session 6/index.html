@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 6 - Objects & Arrays</title>
+  </head>
+
+  <body>
+    <h1>Session 6 - Objects & Arrays</h1>
+
+    <script>
+      // ==========================================
+      // Task 1
+      // Object and Properties
+      // ==========================================
+
+      const userProfile = {
+        username: "Shreyansh",
+        followers: 1500,
+        isVerified: true,
+      };
+
+      console.log("Username:", userProfile.username);
+      console.log("Followers:", userProfile.followers);
+      console.log("Is Verified:", userProfile.isVerified);
+
+      // ==========================================
+      // Task 2
+      // push() and pop()
+      // ==========================================
+
+      let playlist = [
+        "Kesariya",
+        "Heeriye",
+        "Chaleya",
+        "Apna Bana Le",
+        "Tum Se Hi",
+      ];
+
+      console.log("Original Playlist:");
+      console.log(playlist);
+
+      // Add new song
+      playlist.push("Aaj Ki Raat");
+
+      console.log("After push():");
+      console.log(playlist);
+
+      // Remove last song
+      playlist.pop();
+
+      console.log("After pop():");
+      console.log(playlist);
+
+      // ==========================================
+      // Task 3
+      // slice()
+      // ==========================================
+
+      let foodItems = ["Pizza", "Burger", "Dosa", "Pasta", "Biryani"];
+
+      // Index:
+      // Pizza   = 0
+      // Burger  = 1
+      // Dosa    = 2
+      // Pasta   = 3
+      // Biryani = 4
+
+      let selectedFoods = foodItems.slice(1, 4);
+
+      console.log("Selected Food Items:");
+      console.log(selectedFoods);
+
+      // ==========================================
+      // Task 4
+      // Array of Objects + sort()
+      // ==========================================
+
+      let products = [
+        {
+          name: "Headphones",
+          price: 1200,
+        },
+        {
+          name: "Keyboard",
+          price: 800,
+        },
+        {
+          name: "Mouse",
+          price: 500,
+        },
+        {
+          name: "Monitor",
+          price: 7500,
+        },
+        {
+          name: "USB Cable",
+          price: 300,
+        },
+      ];
+
+      products.sort(function (a, b) {
+        return a.price - b.price;
+      });
+
+      console.log("Products sorted by price:");
+      console.log(products);
+
+      // ==========================================
+      // Task 5
+      // filter()
+      // ==========================================
+
+      let movies = [
+        {
+          title: "3 Idiots",
+          rating: 4.8,
+        },
+        {
+          title: "Dangal",
+          rating: 4.6,
+        },
+        {
+          title: "Housefull",
+          rating: 3.5,
+        },
+        {
+          title: "Jawan",
+          rating: 4.2,
+        },
+        {
+          title: "Golmaal",
+          rating: 3.9,
+        },
+      ];
+
+      let topMovies = movies.filter(function (movie) {
+        return movie.rating > 4.0;
+      });
+
+      console.log("Movies with rating above 4.0:");
+
+      topMovies.forEach(function (movie) {
+        console.log(movie.title);
+      });
+    </script>
+  </body>
+</html>

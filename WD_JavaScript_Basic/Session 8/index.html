@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session 8 - Events & Event Listeners</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+      }
+
+      button {
+        padding: 10px 18px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      select,
+      input {
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      #selectedTeam {
+        font-weight: bold;
+      }
+
+      .song-list {
+        width: 300px;
+        padding: 0;
+      }
+
+      .song-list li {
+        list-style: none;
+        padding: 12px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+
+      .song-list li.highlight {
+        background-color: yellow;
+      }
+
+      #buttonContainer {
+        border: 2px solid #333;
+        padding: 20px;
+        width: 350px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ==========================================
+         Task 1
+         onclick
+         ========================================== -->
+
+    <h2>Task 1 - Follow Button</h2>
+
+    <button onclick="alert('You followed this account!')">Follow</button>
+
+    <hr />
+
+    <!-- ==========================================
+         Task 2
+         onchange
+         ========================================== -->
+
+    <h2>Task 2 - Favorite IPL Team</h2>
+
+    <label>Select your favorite IPL team:</label>
+
+    <br />
+
+    <select id="iplTeam" onchange="showTeam()">
+      <option value="">-- Select Team --</option>
+      <option value="CSK">Chennai Super Kings</option>
+      <option value="MI">Mumbai Indians</option>
+      <option value="RCB">Royal Challengers Bengaluru</option>
+      <option value="KKR">Kolkata Knight Riders</option>
+      <option value="GT">Gujarat Titans</option>
+    </select>
+
+    <p id="selectedTeam"></p>
+
+    <hr />
+
+    <!-- ==========================================
+         Task 3
+         addEventListener + event.target
+         ========================================== -->
+
+    <h2>Task 3 - Song List</h2>
+
+    <ul class="song-list" id="songList">
+      <li>Kesariya</li>
+      <li>Heeriye</li>
+      <li>Chaleya</li>
+    </ul>
+
+    <hr />
+
+    <!-- ==========================================
+         Task 4
+         Event Bubbling
+         ========================================== -->
+
+    <h2>Task 4 - Event Bubbling</h2>
+
+    <div id="buttonContainer">
+      <button>Add to Cart</button>
+
+      <button>Wishlist</button>
+
+      <button>Share</button>
+    </div>
+
+    <p id="buttonResult"></p>
+
+    <hr />
+
+    <!-- ==========================================
+         Task 5
+         preventDefault()
+         ========================================== -->
+
+    <h2>Task 5 - Username Form</h2>
+
+    <form id="usernameForm">
+      <input type="text" id="username" placeholder="Enter Username" required />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      // ==========================================
+      // Task 2
+      // onchange
+      // ==========================================
+
+      function showTeam() {
+        let team = document.getElementById("iplTeam").value;
+
+        let result = document.getElementById("selectedTeam");
+
+        if (team === "") {
+          result.textContent = "";
+        } else {
+          result.textContent = "You selected: " + team;
+        }
+      }
+
+      // ==========================================
+      // Task 3
+      // addEventListener + event.target
+      // ==========================================
+
+      let songs = document.querySelectorAll("#songList li");
+
+      songs.forEach(function (song) {
+        song.addEventListener("click", function (event) {
+          // Remove highlight from all songs
+          songs.forEach(function (item) {
+            item.classList.remove("highlight");
+          });
+
+          // Highlight clicked song
+          event.target.classList.add("highlight");
+        });
+      });
+
+      // ==========================================
+      // Task 4
+      // Event Bubbling
+      // ==========================================
+
+      let buttonContainer = document.getElementById("buttonContainer");
+
+      buttonContainer.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+          let clickedButton = event.target.textContent;
+
+          document.getElementById("buttonResult").textContent =
+            "You clicked: " + clickedButton;
+        }
+      });
+
+      // ==========================================
+      // Task 5
+      // preventDefault()
+      // ==========================================
+
+      let usernameForm = document.getElementById("usernameForm");
+
+      usernameForm.addEventListener("submit", function (event) {
+        // Stop normal form submission
+        event.preventDefault();
+
+        let username = document.getElementById("username").value;
+
+        alert("Hello, " + username + "!");
+      });
+    </script>
+  </body>
+</html>
