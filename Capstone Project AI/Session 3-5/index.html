@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MusicFlow - Sign Up</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="signup-box">
+        <div class="logo">🎵 MusicFlow</div>
+
+        <h1>Create Your Account</h1>
+        <p class="subtitle">Join the music experience</p>
+
+        <form id="signupForm">
+          <!-- Username -->
+          <div class="form-group">
+            <label for="username">Username</label>
+
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+            />
+
+            <small id="usernameError"></small>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+              type="text"
+              id="email"
+              placeholder="Enter your email"
+              onblur="checkEmail()"
+            />
+
+            <small id="emailError"></small>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+
+            <div class="password-box">
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                onblur="checkPassword()"
+              />
+
+              <span class="eye" onclick="togglePassword('password', this)">
+                👁️
+              </span>
+            </div>
+
+            <small id="passwordError"></small>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+
+            <div class="password-box">
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                onblur="checkConfirmPassword()"
+              />
+
+              <span
+                class="eye"
+                onclick="togglePassword('confirmPassword', this)"
+              >
+                👁️
+              </span>
+            </div>
+
+            <small id="confirmPasswordError"></small>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="signup-btn">Sign Up</button>
+
+          <p id="successMessage"></p>
+        </form>
+
+        <p class="login-text">
+          Already have an account?
+          <a href="#">Log In</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

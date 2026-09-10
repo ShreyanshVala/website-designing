@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+/* Signup Box */
+
+.signup-box {
+  background: #181818;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Logo */
+
+.logo {
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  color: #1ed760;
+
+  margin-bottom: 25px;
+}
+
+/* Heading */
+
+h1 {
+  text-align: center;
+
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+
+  color: #b3b3b3;
+
+  margin-bottom: 30px;
+}
+
+/* Form Group */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Inputs */
+
+input {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #535353;
+
+  border-radius: 6px;
+
+  background: #242424;
+
+  color: white;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+input:focus {
+  border-color: #1ed760;
+}
+
+/* Password Box */
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 45px;
+}
+
+/* Eye Icon */
+
+.eye {
+  position: absolute;
+
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+/* Error Message */
+
+small {
+  display: block;
+
+  color: #ff4d4d;
+
+  margin-top: 6px;
+
+  font-size: 12px;
+}
+
+/* Sign Up Button */
+
+.signup-btn {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #1ed760;
+
+  color: #000;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Task 3 - Hover Animation */
+
+.signup-btn:hover {
+  background: #1fdf64;
+
+  transform: scale(1.05);
+
+  box-shadow: 0 5px 20px rgba(30, 215, 96, 0.3);
+}
+
+/* Success Message */
+
+#successMessage {
+  text-align: center;
+
+  color: #1ed760;
+
+  margin-top: 15px;
+
+  font-weight: bold;
+}
+
+/* Login */
+
+.login-text {
+  text-align: center;
+
+  margin-top: 25px;
+
+  color: #b3b3b3;
+}
+
+.login-text a {
+  color: #1ed760;
+
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width: 500px) {
+  .signup-box {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
